@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Arctic Fox</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    
+    
+     <script>
+        setInterval(()=>{
+          const time = document.querySelector(".display #time");
+          let date = new Date();
+          let hours = date.getHours();
+          let minutes = date.getMinutes();
+          let seconds = date.getSeconds();
+          let day_night = "AM";
+          if(hours > 12){
+            day_night = "PM";
+            hours = hours - 12;
+          }
+          if(seconds < 10){
+            seconds = "0" + seconds;
+          }
+          if(minutes < 10){
+            minutes = "0" + minutes;
+          }
+          if(hours < 10){
+            hours = "0" + hours;
+          }
+          time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+        });
+     </script>
+
+    <div class="container">
+      <div class="se-name">
+        <h1>Arctic Fox</h1>
+      </div>
+        <form action="https://www.google.com/search" method="get" class="search-bar">
+            <input type="text" placeholder="search anything" name="q">
+            <button type="submit"><img src="images/search.png"></button>
+        </form>
+        <div class="wrapper">
+          <div class="display">
+             <div id="time"></div>
+          </div>
+          <span></span>
+          <span></span>
+       </div>
+    </div>
+</body>
+</html>
